@@ -11,18 +11,27 @@ jsPsych.plugins["demographics"] = (function() {
 
   var plugin = {};
 
-  plugin.trial = function(display_element, trial) {
+  plugin.info = {
+    name: 'demographics',
+    description: '',
+    parameters: {
+      placeholder: {
+        type: jsPsych.plugins.parameterType.STRING,
+        pretty_name: 'Placeholder',
+        default: undefined,
+        array: false,
+        description: 'Placeholder.'
+      }
+    }
+  }
 
-    // if any trial variables are functions
-    // this evaluates the function and replaces
-    // it with the output of the function
-    trial = jsPsych.pluginAPI.evaluateFunctionParameters(trial);
+  plugin.trial = function(display_element, trial) {
 
     // this array holds handlers from setTimeout calls
     // that need to be cleared if the trial ends early
     var setTimeoutHandlers = [];
 
-    display_element.html(
+    $(display_element).html(
       `
       <div class="header mb-4">
         <h1>Demographic Information</h1>
@@ -32,7 +41,7 @@ jsPsych.plugins["demographics"] = (function() {
       <form>
         <fieldset class="form-group">
           <div class="row">
-            <legend class="col-form-legend col-sm-3">What is your gender?</legend>
+            <legend class="col-form-label col-sm-3">What is your gender?</legend>
             <div class="col-sm-9">
               <div class="form-check">
                 <label class="form-check-label">
@@ -221,7 +230,7 @@ jsPsych.plugins["demographics"] = (function() {
       jsPsych.data.addProperties(demographics);
 
       // clear the display
-      display_element.html('');
+      $(display_element).html('');
 
       // move on to the next trial
       jsPsych.finishTrial(trial_data);

@@ -11,6 +11,20 @@ jsPsych.plugins["consent"] = (function() {
 
   var plugin = {};
 
+  plugin.info = {
+    name: 'consent',
+    description: '',
+    parameters: {
+      pay: {
+        type: jsPsych.plugins.parameterType.STRING,
+        pretty_name: 'Button HTML',
+        default: undefined,
+        array: false,
+        description: 'Button HTML.'
+      }
+    }
+  }
+
   plugin.trial = function(display_element, trial) {
 
     // default trial parameters
@@ -24,11 +38,6 @@ jsPsych.plugins["consent"] = (function() {
     trial.address = trial.address || '{{RESEARCHER_ADDRESS}}'
     trial.phone = trial.phone || '{{RESEARCHER_PHONE}}'
     trial.email = trial.email || '{{RESEARCHER_EMAIL}}'
-
-    // if any trial variables are functions
-    // this evaluates the function and replaces
-    // it with the output of the function
-    trial = jsPsych.pluginAPI.evaluateFunctionParameters(trial);
 
     // this array holds handlers from setTimeout calls
     // that need to be cleared if the trial ends early
@@ -45,7 +54,7 @@ jsPsych.plugins["consent"] = (function() {
       class: ''
     });
 
-    display_element.append($('<div>', {
+    display_element.appendChild($('<div>', {
       class: 'header'
     }).append($('<h1>', {
       class: 'title',
@@ -53,7 +62,7 @@ jsPsych.plugins["consent"] = (function() {
     })).append($('<p>', {
       class: 'lead',
       html: trial.requirements + 'The results of this experiment may be summarized in scientific publications. Before you agree to participate, please read the terms under which you consent to participate.'
-    })));
+    })).get(0));
 
     consent_block.append($('<h2>', {
       class: 'mt-4',
@@ -163,7 +172,7 @@ jsPsych.plugins["consent"] = (function() {
       to participate as a subject in this research project.</i><hr class="style-eight" />`
     })).append(button_container));
 
-    display_element.append(consent_element);
+    display_element.appendChild(consent_element.get(0));
 
     // store response
     var response = {
@@ -202,7 +211,7 @@ jsPsych.plugins["consent"] = (function() {
       };
 
       // clear the display
-      display_element.html('');
+      display_element.innerHTML = '';
 
       // move on to the next trial
       jsPsych.finishTrial(trial_data);
