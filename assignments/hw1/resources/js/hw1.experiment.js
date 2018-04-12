@@ -54,16 +54,16 @@ function Experiment(params) {
      * the experiment.
     */
     preamble.consent_check.conditional_function = function() {
-      var data = jsPsych.data.getLastTrialData();
+      var data = jsPsych.data.get().last(1).values()[0];
       return !data.consented;
     }
 
     // Check that the participant entered a valid age.
     preamble.demographics_check.conditional_function = function() {
-      var data = jsPsych.data.getLastTrialData();
+      var data = jsPsych.data.get().last(1).values()[0];
       console.log(data);
-      if(parseInt(data.age) < 18) return false;
-      return true;
+      if(parseInt(data.age) < 18) return true;
+      return false;
     }
 
     // Add the preamble to the timeline
@@ -83,7 +83,7 @@ function Experiment(params) {
   /** Build the experiment.
   */
   this.createTimeline = function() {
-    //initPreamble();
+    initPreamble();
     initTrials();
   }
 };
