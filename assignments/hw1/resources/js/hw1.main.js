@@ -46,7 +46,12 @@ function initializeExperiment(experiment) {
   jsPsych.init({
     timeline: experiment.getTimeline(),
     show_progress_bar: true,
-    display_element: 'jspsych-target'
+    display_element: 'jspsych-target',
+    on_finish: function() {
+      var code = jsPsych.data.getLastTrialData().code;
+      $('#jspsych-target').html('<p class="lead">You have finished the experiment! Your responses have been saved.</p>' +
+        '<p>If you have any questions or concerns, please do not hesitate to contact the lab at <a href="mailto:uchicagolanglab@gmail.com">uchicagolanglab@gmail.com</a>.</p>');
+    }
   });
 
   $('#load-text').remove();
