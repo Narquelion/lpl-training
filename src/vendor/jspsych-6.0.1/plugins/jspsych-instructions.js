@@ -94,7 +94,7 @@ jsPsych.plugins.instructions = (function() {
 
       if (trial.show_clickable_nav) {
 
-        var nav_html = "<div class='jspsych-instructions-nav' style='padding: 10px 0px;'>";
+        var nav_html = "<div class='jspsych-instructions-nav text-center' style='padding: 10px 0px;'>";
         if (current_page != 0 && trial.allow_backward) {
           nav_html += "<button id='jspsych-instructions-back' class='jspsych-btn' style='margin-right: 5px;'>&lt; "+trial.button_label_previous+"</button>";
         }
@@ -190,6 +190,7 @@ jsPsych.plugins.instructions = (function() {
     show_current_page();
 
     if (trial.allow_keys) {
+      console.log(trial.key_forward);
       var keyboard_listener = jsPsych.pluginAPI.getKeyboardResponse({
         callback_function: after_response,
         valid_responses: [trial.key_forward, trial.key_backward],
