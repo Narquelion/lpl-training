@@ -23,9 +23,7 @@
     "consent_check": {
       "timeline": [{
         "type": "instructions",
-        "key_forward": " ",
-        "show_clickable_nav": true,
-        "allow_backward": false,
+        "key_forward": "",
         "pages": ["<p class=\"lead\">Thank you for considering participation in this study!</p><p>We're sorry it wasn't for you. You may close this window and return your HIT. There is no penalty for returning our lab's HITs.</p>"]
       }]
     },
@@ -36,7 +34,7 @@
     "demographics_check": {
       "timeline": [{
         "type": "instructions",
-        "key_forward": " ",
+        "key_forward": "",
         "pages": ["<p class=\"lead\">Thank you for your interest in this study!</p><p>Unfortunately, you do not meet our requirements. You may close this window and return your HIT. There is no penalty for returning our lab's HITs.</p>"]
       }]
     },
