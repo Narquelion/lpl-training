@@ -34,6 +34,20 @@ Images will need to be rated on these adjectives:
 
 Note that the name that should be displayed in the experiment does not always match the image name. Your solution should address this (*without* changing the filenames).
 
+### Demographic information & instructions
+
+Whenever you create an experiment, you need to update the consent form and instructions to reflect the content of your experiment. So that you are aware of how to edit this information, please replace all of the following strings in hw1.data.json with the provided text:
+
+DESC_OF_RESEARCH: "In this research, we are investigating the processes involved in the comprehension of sentences. "
+
+DESC_OF_STUDY: [Come up with this on your own!]
+
+STUDY_LENGTH: "about 10 minutes"
+
+STUDY_PAY: "$1.00 USD"
+
+EXPT_INSTRUCTIONS: [Come up with this on your own!]
+
 ### Hints
 
 * Keep the functionality of `jsPsych.randomization.factorial()` in mind when creating your list of stimuli. In other words, don't just make a list of all possible trials! Documentation for this function can be found here here: [https://www.jspsych.org/core_library/jspsych-randomization/](https://www.jspsych.org/core_library/jspsych-randomization/).
@@ -53,13 +67,13 @@ Your browser will probably complain if you try to run this experiment without ac
       // $.getJSON(file, loadExperimentFromJSON).fail(error);
       loadExperimentFromJSON(/* NAME OF YOUR DATA OBJECT HERE */);
     }
- 
+
 ##### Option 2
 
 If you want to try it out as-is, you can install a command line tool that lets you serve content locally. I did this with Jekyll since I had it on hand already. Note that later we will go over serving via the Firebase CLI, so if you don't want to install anything at this time, don't worry about it.
 
 To install Jekyll and start a server on Mac OS (my preferred way):
-  
+
 1. Update Xcode if necessary: `xcode-select --install`
 2. Download and install Homebrew, if you don't have it
 3. `brew install ruby`
