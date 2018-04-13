@@ -41,9 +41,10 @@
     "post_demographics": {
       "type": "instructions",
       "key_forward": " ",
+      "button_label_next": "Begin experiment",
       "show_clickable_nav": true,
       "allow_backward": false,
-      "pages": ["<p class=\"lead mt-4\">Thank you for deciding to participate in our study!</p><p>EXPT_INSTRUCTIONS.</p><p>To continue, please click the <strong>\"next\"</strong> button below.</p>"]
+      "pages": ["<p class=\"lead mt-4\">Thank you for deciding to participate in our study!</p><p>EXPT_INSTRUCTIONS.</p><p>To continue, please click the button that says <strong>\"Begin experiment\"</strong> below.</p>"]
     }
   }
 }
