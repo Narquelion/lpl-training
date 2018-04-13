@@ -110,8 +110,6 @@ A reduced Latin square is a Latin square where the first column and first row ar
 
 is a reduced Latin square.
 
-Latin squares are commonly used in experimental design to ensure that each item is seen in a different position for each subject. A balanced Latin square, in particular, optimizes the balance of items so that every item appears the same number of times after each other item.
-
 In the lab, we frequently use reduced Latin squares when we need to balance a set of conditions over a set of items. In other words, say we have items [a, b, c, d] and conditions [1, 2]. We want to collect an even number of each condition for each item.  We can do this by first creating a reduced Latin square representing our items:
 
 
@@ -171,4 +169,4 @@ Output will look like this:
 
 ### 1.2 bonus
 
-Write a script that will generate an unreduced, balanced Latin square of order 32.
+Write a script that will generate a "Williams Design"-—a latin square that is balanced for first-order carryover effects—-for any *n*. See [this paper](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwjY9v2bzLfaAhVW_oMKHWzCDGUQFggwMAE&url=https%3A%2F%2Fwww.jstatsoft.org%2Farticle%2Fview%2Fv029c01%2Fv29c01.pdf&usg=AOvVaw1zkkWISYBuV8tZYOv3840_) for a description of how to construct a Williams design. See http://statpages.info/latinsq.html for examples of balanced Latin squares for various *n*. To cheat, check out this [Pythonic solution](https://medium.com/@graycoding/balanced-latin-squares-in-python-2c3aa6ec95b9).
