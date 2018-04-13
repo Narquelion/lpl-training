@@ -131,7 +131,7 @@ Then, we combine the items with our conditions like so:
 | c1 | d2 | a1 | b2 |
 | d1 | a2 | b1 | c2 |
 
-As you can see, this results in each item being paired twice with each condition. After this, we would randomize each row of trials, or if we wanted to be extra cautious, map our combinations onto a balanced Latin square.
+As you can see, this results in each item being paired twice with each condition. After this, we would randomize each row of trials.
 
 ### 1.2a
 
