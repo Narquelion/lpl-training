@@ -87,23 +87,23 @@ As it is, your experiment is online and being hosted by Firebase, but it's not a
 
 1. Add the appropriate includes to `experiment.html`. These are:
 
-    <!-- Firebase includes -->
+       <!-- Firebase includes -->
 
-    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-storage.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-storage.js"></script>
 
 2. Add a Firebase object to `main.js` and initialize it:
 
-    var config = {
-      apiKey: "YOUR_API_KEY_HERE",
-      databaseURL: "https://PROJECT-NAME.firebaseio.com/",
-      storageBucket: "gs:///PROJECT-NAME.appspot.com"
-    };
-    firebase.initializeApp(config);
-
-    var storageRef = firebase.storage().ref();
-    var database = firebase.database();
+       var config = {
+         apiKey: "YOUR_API_KEY_HERE",
+         databaseURL: "https://PROJECT-NAME.firebaseio.com/",
+         storageBucket: "gs:///PROJECT-NAME.appspot.com"
+       };
+       firebase.initializeApp(config);
+ 
+       var storageRef = firebase.storage().ref();
+       var database = firebase.database();
 
 Your API key can be found in Settings > Project Settings.
 
