@@ -101,7 +101,7 @@ As it is, your experiment is online and being hosted by Firebase, but it's not a
          storageBucket: "gs:///PROJECT-NAME.appspot.com"
        };
        firebase.initializeApp(config);
- 
+
        var storageRef = firebase.storage().ref();
        var database = firebase.database();
 
@@ -223,3 +223,11 @@ Use the Mechanical Turk Sandbox to test your experiment. You can use the lab cre
 4. Are you able to submit the HIT and see it in your batch results?
 5. Does the data from the experiment get saved to your Firebase project?
 6. Does the worker ID appear in your Firebase database?
+
+## 2.2: Use the Mechanical Turk Sandbox to test your trials from HW 1.2
+
+Moved to next week!
+
+## 2.3: Write a Python script to clean the resulting data
+
+Moved to next week!
