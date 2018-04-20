@@ -189,7 +189,7 @@ $( document ).ready(function() {
 
 HITs (Human Intelligence Tasks) on Mechanical Turk consist of single, embedded HTML pages. They're unreliable and ill-suited to complex tasks, which is why we host our experiments externally. But we still need to actually get our subjects to the experiment, and we also need to be able to pay then when they finish---that's where Mechanical Turk comes in.
 
-Using the template provided at lpl-firebase/templates/basic/ad.html, write up and ad page for your experiment. At a minimum, you should give it a short, useful title and a brief description that tells subjects about the kind of tasks they will perform during the experiment. (But don't make it so detailed that they come in with any biases regarding how to respond!)
+Using the provided template, write up an ad page for your experiment. At a minimum, you should give it a short, useful title and a brief description that tells subjects about the kind of tasks they will perform during the experiment. (But don't make it so detailed that they come in with any biases regarding how to respond!)
 
 You will also need to edit the URL in the ad page, which currently points to language-processing-lab.firebaseapp.com/templates/basic/experiment.html, so that it points to where your experiment is hosted.
 
@@ -216,3 +216,10 @@ You might notice that the ad page asks for a survey code. This is what workers e
 ### 2.1d Testing
 
 Use the Mechanical Turk Sandbox to test your experiment. You can use the lab credentials to do this (provided in the lesson). You will want to check for a few things:
+
+1. Is the ad page informative?
+2. Does the link in the ad page lead to the experiment?
+3. Are you able to proceed through the entire experiment and obtain a survey code?
+4. Are you able to submit the HIT and see it in your batch results?
+5. Does the data from the experiment get saved to your Firebase project?
+6. Does the worker ID appear in your Firebase database?
