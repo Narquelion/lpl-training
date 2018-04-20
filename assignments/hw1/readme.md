@@ -49,7 +49,19 @@ STUDY_PAY: "$1.00 USD"
 EXPT_INSTRUCTIONS: [Come up with this on your own!]
 
 ### Hints
-
+    
+* Use the "survey-likert" plugin for your trials. This will look like:
+    
+        var trial = {
+            type: 'survey-likert',
+            questions: [{
+                question: '<p><img src="data/resources/' + /*image name and scalepoint*/ + '.jpg"></img></p>' + 
+                          /* prompt string here */,
+                labels: ['1 (completely disagree)','2','3','4','5 (completely agree)'],
+                required: true
+            ]}
+        }
+   
 * Keep the functionality of `jsPsych.randomization.factorial()` in mind when creating your list of stimuli. In other words, don't just make a list of all possible trials! Documentation for this function can be found here here: [https://www.jspsych.org/core_library/jspsych-randomization/](https://www.jspsych.org/core_library/jspsych-randomization/).
 * In this vein, my solution for `initTrials()` involved two loops. Loop 1 generates the factors for each object, i.e. generates all possible combinations of object + adjective + scale position. Loop 2 generates the actual rating trials.
 * `jsPsych.randomization.shuffle()` will randomize your trials.
