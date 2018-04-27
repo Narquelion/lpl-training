@@ -32,12 +32,12 @@ Next need to do a little more housekeeping before we are actually able to integr
 
 1. Open up `database.rules.json` in your editor of choice. It will look like this:
 
-      {
-        "rules": {
-          ".read": "auth != null",
-          ".write": "auth != null"
-        }
-      }
+         {
+           "rules": {
+           ".read": "auth != null",
+           ".write": "auth != null"
+         }
+       }
 
 Edit it so that both "read" and "write" are true:
 
@@ -50,7 +50,7 @@ Edit it so that both "read" and "write" are true:
 
 2. Open `storage.rules`. It will look like this:
 
-      service firebase.storage {
+       service firebase.storage {
         match /b/{bucket}/o {
           match /{allPaths=**} {
             allow read, write: if request.auth!=null;
